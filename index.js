@@ -1,4 +1,5 @@
 var express = require('express');
+var cors = require('cors')
 var app = express();
 
 //Routes
@@ -15,6 +16,7 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 app.listen(4000);
 
 //Register Routes
+app.use(cors());
 app.use('/', indexRoute);
 
 module.exports = app;
